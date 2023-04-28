@@ -3,6 +3,9 @@ $(document).ready(function(){
   var isDropdownOpen = false
   var previousMarginLeft = ""
   $(".link").find($(".linkline")).css('visibility', 'hidden')
+  $("#hiddena").css('visibility', 'hidden')
+  $(".linkline").css("width", 0)
+  $(".linkline").find($("rect")).css("width", 0)
 
   $(window).on( "resize", function() {
     if($(window).width() <= 850) {
@@ -18,11 +21,19 @@ $(document).ready(function(){
     }
   });
 
+  $.fn.textWidth = function(){
+    var html_org = $(this).html();
+    var html_calc = '<span>' + html_org + '</span>';
+    $("#hiddena").html(html_calc);
+    var width = $("#hiddena").find('span:first').width();
+    return width;
+  };
+
   $(".link").hover(function(){
     $(this).find($("a")).css("color", "#FF715B")
     $(this).find($(".linkline")).css('visibility', 'visible')
-    $(this).find($(".linkline")).css("width", $(".link").find($("a")).css("width"))
-    $(this).find($(".linkline")).find($("rect")).css("width", $(".link").find($("a")).css("width"))
+    $(this).find($(".linkline")).css("width", $(".link").find($("a")).textWidth())
+    $(this).find($(".linkline")).find($("rect")).css("width", $(".link").find($("a")).textWidth())
   }, function () {
     $(this).find($(".linkline")).css("width", 0)
     $(this).find($(".linkline")).find($("rect")).css("width", 0)
