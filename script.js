@@ -1,8 +1,5 @@
-var pageToLoad = "about.html"
-
 $(document).ready(function(){
 
-  $(".maincontent").load(pageToLoad);
   var isDropdownOpen = false
   var previousMarginLeft = ""
   $(".link").find($(".linkline")).css('visibility', 'hidden')
@@ -36,17 +33,15 @@ $(document).ready(function(){
   $(".link").click(function(){
   }, function () {
     if($(this).text().includes("Project")) {
-      pageToLoad = "project.html"
-      location.reload();
+      $(".maincontent").load("project.html");
     }
-    if($(this).text().includes("About")) {
-      pageToLoad = "about.html"
-      location.reload();
+    if($(this).text().includes("Project")) {
+      $(".maincontent").load("about.html");
     }
     if($(this).text().includes("Links")) {
-      pageToLoad = "links.html"
-      location.reload();
+      $(".maincontent").load("links.html");
     }
+    $(".link").find($(".linkline")).css('visibility', 'hidden')
   });
 
   $(".dropdown").click(function(){
