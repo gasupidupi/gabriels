@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: Arial, Helvetica, sans-sans-serif;
+  background-color: #eeeeee;
+  padding: 0;
+  margin:  0;
+}
+h1 {
+  color: #FF715B;
+  font-size: 2.6em;
+}
+p {
+  color: red;
+}
+a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #2f52e0;
+  display: block;
+  transition-duration: 500ms;
+}
+.sidebar {
+  position: absolute;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 100);
+  border-top-style: solid;
+  border-width: 0.1em;
+  border-color: #eeeeee;
+  padding-top: 2em;
+  width: 10em;
+  height: 100%;
+  margin-left: -11em;
+  transition-duration: 500ms;
+  float:left;
+  z-index: 100;
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
+}
+.sidebarlinks {
+  text-align: center;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  padding: 1em;
+  background-color: #FFFFFF;
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
+  height: 6em;
+}
+.logo {
+  width: 3em;
+  height: 5em;
+}
+.link {
+  margin-bottom: 1em;
+  cursor: pointer;
+  cursor: hand;
+}
+.line {
+  position: absolute;
+  transition-duration: 500ms;
+  color: #F9CB40;
+}
+.linkline {
+  color: #FF715B;
+  transition-duration: 500ms;
+}
+.mainwrapper {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-top: 1em;
+}
+.maincontent {
+    margin-left: -11em;
+    width: 50em;
+    height: auto;
+    margin: 0 auto;
+    padding: 1em;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
+    background-color: rgb(255, 255, 255);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  padding: 1em;
+  cursor: pointer;
+  cursor: hand;
+}
+#barcontent {
+  padding-top: 0em;
+}
+#bartitle {
+  display: inline-block;
+  user-select: none;
+}
+#logo {
+
+}
+#line1 {
+  top: 25%;
+}
+#line2 {
+  top: 45%;
+}
+#line3 {
+  top: 65%;
+}
+@media screen and (max-width: 850px) {
+  .maincontent {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    width: auto;
+  }
+  .sidebar {
+    width: 50%;
+    margin-left: -50%;
+  }
+}
