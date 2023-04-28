@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  $(".maincontent").load("about.html");
 
   var isDropdownOpen = false
   var previousMarginLeft = ""
@@ -35,12 +34,15 @@ $(document).ready(function(){
   }, function () {
     if($(this).text().includes("Project")) {
       $(".maincontent").load("project.html");
+      location.reload();
     }
     if($(this).text().includes("Project")) {
       $(".maincontent").load("about.html");
+      location.reload();
     }
     if($(this).text().includes("Links")) {
       $(".maincontent").load("links.html");
+      location.reload();
     }
   });
 
