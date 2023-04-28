@@ -1,11 +1,11 @@
 $(document).ready(function(){
+  $(".maincontent").load("about.html");
 
   var isDropdownOpen = false
   var previousMarginLeft = ""
   $(".link").find($(".linkline")).css('visibility', 'hidden')
 
   $(window).on( "resize", function() {
-  $( "#log" ).append( "<div>Handler for `resize` called.</div>" );
     if($(window).width() <= 850) {
       if(isDropdownOpen == false) {
         $(".sidebar").css("margin-left", "-50%")
@@ -28,14 +28,19 @@ $(document).ready(function(){
     $(this).find($(".linkline")).css("width", 0)
     $(this).find($(".linkline")).find($("rect")).css("width", 0)
     $(this).find($(".linkline")).css('visibility', 'hidden')
-    $(this).find($("a")).css("color", "#2f52e0")
+    $(this).find($("a")).css("color", "#BCED09")
   });
 
   $(".link").click(function(){
   }, function () {
-
     if($(this).text().includes("Project")) {
-      $(".maincontent").load("project.html");;
+      $(".maincontent").load("project.html");
+    }
+    if($(this).text().includes("Project")) {
+      $(".maincontent").load("about.html");
+    }
+    if($(this).text().includes("Links")) {
+      $(".maincontent").load("links.html");
     }
   });
 

@@ -20,6 +20,66 @@
      id="defs2">
     <inkscape:path-effect
        effect="bspline"
+       id="path-effect845"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect841"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect837"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect833"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect829"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect825"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
        id="path-effect819"
        is_visible="true"
        weight="33.333333"
@@ -36,9 +96,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="400.91729"
-     inkscape:cy="379.37534"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="-165.65755"
+     inkscape:cy="479.32794"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -59,7 +119,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,11 +137,12 @@
        ry="78.052086" />
     <path
        style="fill:none;stroke:#ff715b;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 86.556547,140.51785 c 0,46.23883 0,92.47791 16.442193,115.59759 16.44219,23.11967 49.32593,23.11967 65.76776,-0.18881 16.44183,-23.30847 16.44183,-69.9259 8.18953,-93.2343 -8.2523,-23.3084 -24.75735,-23.3084 -41.26258,-23.3084"
+       d="m 135.69345,139.38393 c 16.50522,0 33.01028,0 41.26258,23.3084 8.2523,23.3084 8.2523,69.92583 -8.18953,93.2343 -16.44183,23.30848 -49.32557,23.30848 -65.76776,0.1888 -16.442193,-23.11967 -16.442193,-69.35875 -16.406903,-95.76424 0.03529,-26.40549 0.105868,-32.97746 1.561066,-41.10349 1.455198,-8.12603 4.294923,-17.8061 8.565948,-24.894512 4.271029,-7.088412 9.973139,-11.585223 15.674959,-16.081808"
        id="path817"
        inkscape:connector-curvature="0"
        inkscape:path-effect="#path-effect819"
-       inkscape:original-d="m 86.556547,140.51785 c 2.65e-4,46.23883 2.65e-4,92.47791 0,138.71726 32.884383,-2.7e-4 65.768123,-2.7e-4 98.651783,0 2.7e-4,-46.61695 2.7e-4,-93.23438 0,-139.85118 -16.5046,-2.7e-4 -33.00965,-2.7e-4 -49.51488,0"
-       transform="translate(-21.91525,-36.864021)" />
+       inkscape:original-d="m 135.69345,139.38393 c 16.50522,-2.6e-4 33.01028,-2.7e-4 49.51488,0 2.7e-4,46.6168 2.7e-4,93.23423 0,139.85118 -32.88366,-2.7e-4 -65.7674,-2.7e-4 -98.651783,0 2.65e-4,-46.23935 2.65e-4,-92.47843 0,-138.71726 0.07084,-6.57215 0.14142,-13.14412 0.211733,-19.71578 2.839994,-9.68035 5.679718,-19.36042 8.519183,-29.040243 5.702387,-4.497085 11.404497,-8.993896 17.106347,-13.490447"
+       transform="translate(-21.91525,-36.864021)"
+       sodipodi:nodetypes="cccccccc" />
   </g>
 </svg>
