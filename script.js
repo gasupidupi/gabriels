@@ -15,6 +15,7 @@ $(document).ready(function() {
         $(".maincontent").css("margin-left", "0.5em")
         $(".maincontent").css("margin-right", "0.5em")
         $(".maincontent").css("width", "auto")
+        $(".leftmarginwhendesktop").css("margin-left", "0")
         previousMarginLeft = "-50%"
     } else {
         $(".sidebar").css("margin-left", "-11em")
