@@ -2,11 +2,12 @@ $(document).ready(function(){
 
   var isDropdownOpen = false
   var previousMarginLeft = ""
+  var prevScrollpos = 0
   $(".link").find($(".linkline")).css('visibility', 'hidden')
   $(".linkline").css("width", 0)
   $(".linkline").find($("rect")).css("width", 0)
 
-  $(window).on( "resize", function() {
+  $(window).on("resize", function() {
     if($(window).width() <= 850) {
       if(isDropdownOpen == false) {
         $(".sidebar").css("margin-left", "-50%")
@@ -20,11 +21,32 @@ $(document).ready(function(){
     }
   });
 
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos & currentScrollPos > 0) {
+      $(".navbar").css("position", "sticky")
+      $(".navbar").css("top", "0")
+    } else {
+      $(".navbar").css("position", "relative")
+      if(isDropdownOpen = true){
+        isDropdownOpen = false;
+        $(".line").css("color", "#F9CB40")
+        $("#line1").css("transform", "revert")
+        $("#line1").css("top", "25%")
+        $("#line3").css("transform", "revert")
+        $("#line3").css("top", "65%")
+        $("#line2").show()
+        $(".sidebar").css("margin-left", previousMarginLeft)
+      }
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   $(".link").hover(function(){
     $(this).find($("a")).css("color", "#FF715B")
     $(this).find($(".linkline")).css('visibility', 'visible')
-    $(this).find($(".linkline")).css("width", $(".link").find($("a")).css("width"))
-    $(this).find($(".linkline")).find($("rect")).css("width", $(".link").find($("a")).css("width"))
+    $(this).find($(".linkline")).css("width", $(this).find($("a")).css("width"))
+    $(this).find($(".linkline")).find($("rect")).css("width", $(this).find($("a")).css("width"))
   }, function () {
     $(this).find($(".linkline")).css("width", 0)
     $(this).find($(".linkline")).find($("rect")).css("width", 0)
@@ -34,16 +56,33 @@ $(document).ready(function(){
 
   $(".link").click(function(){
   }, function () {
-    if($(this).text().includes("Project")) {
-      $(".maincontent").load("project.html");
+    if($(this).text().includes("About")) {
+      $('html, body').animate({
+          scrollTop: $("#About").offset().top
+      }, 500);
     }
-    if($(this).text().includes("Project")) {
-      $(".maincontent").load("about.html");
+    if($(this).text().includes("Project1")) {
+      $('mainwrapper, maincontent').animate({
+          scrollTop: $("#Project1").offset().top
+      }, 500);
     }
     if($(this).text().includes("Links")) {
-      $(".maincontent").load("links.html");
+      $('mainwrapper, maincontent').animate({
+          scrollTop: $("#Links").offset().top
+      }, 500);
     }
-    $(".link").find($(".linkline")).css('visibility', 'hidden')
+  });
+
+  $(".link").hover(function(){
+    $(this).find($("a")).css("color", "#FF715B")
+    $(this).find($(".linkline")).css('visibility', 'visible')
+    $(this).find($(".linkline")).css("width", $(this).find($("a")).css("width"))
+    $(this).find($(".linkline")).find($("rect")).css("width", $(this).find($("a")).css("width"))
+  }, function () {
+    $(this).find($(".linkline")).css("width", 0)
+    $(this).find($(".linkline")).find($("rect")).css("width", 0)
+    $(this).find($(".linkline")).css('visibility', 'hidden')
+    $(this).find($("a")).css("color", "#BCED09")
   });
 
   $(".dropdown").click(function(){

@@ -14,28 +14,19 @@ h1 {
 }
 a {
   text-decoration: none;
-  font-size: 1.5em;
   color: #BCED09;
   display: inline;
   transition-duration: 500ms;
+  position: relative;
 }
-.sidebar {
-  position: absolute;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 100);
-  border-top-style: solid;
-  border-width: 0.1em;
-  border-color: #eeeeee;
-  padding-top: 2em;
-  width: 10em;
-  margin-left: -11em;
-  transition-duration: 500ms;
-  float:left;
-  z-index: 100;
-  box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-.sidebarlinks {
-  text-align: center;
+img {
+  width: 100%;
+  height: auto;
 }
 .navbar {
   position: relative;
@@ -44,15 +35,50 @@ a {
   background-color: #FFFFFF;
   box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
   height: 6em;
+  z-index: 2;
+}
+.sidebar {
+  position: fixed;
+  top: 8em;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 100);
+  border-top-style: solid;
+  border-width: 0.1em;
+  border-color: #eeeeee;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  width: 10em;
+  margin-left: -11em;
+  transition-duration: 500ms;
+  float:left;
+  z-index: 100;
+  box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
+  float:left; /* added */
+  shape-outside:linear-gradient(transparent,transparent);
+}
+.sidebarlinks {
+  text-align: center;
+}
+.sidebarlinks .link a {
+  font-size: 1.5em;
+}
+.sidebarlinks .link {
+  height: 2em;
+  margin-bottom: 1em;
 }
 .logo {
   width: 3em;
   height: 5em;
 }
 .link {
-  margin-bottom: 1em;
   cursor: pointer;
   cursor: hand;
+  display: inline-grid;
+  grid-template-columns: 1fr;
+}
+.link div {
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
 .line {
   position: absolute;
@@ -62,6 +88,8 @@ a {
 .linkline {
   color: #FF715B;
   transition-duration: 500ms;
+  position: relative;
+  vertical-align: bottom;
 }
 .mainwrapper {
   display: inline-block;
@@ -79,6 +107,8 @@ a {
     border-radius: 1em;
     box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    z-index: 0;
 }
 .dropdown {
   position: relative;
