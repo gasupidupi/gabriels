@@ -6,15 +6,15 @@ $(document).ready(function(){
   $(".link").find($(".linkline")).css('visibility', 'hidden')
   $(".linkline").css("width", 0)
   $(".linkline").find($("rect")).css("width", 0)
-  if($(window).width() <= 850) {
-    if(isDropdownOpen == false) {
-      $(".sidebar").css("margin-left", "-50%")
-    }
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 850 ) {
+    $(".sidebar").css("width", "50%")
+    $(".sidebar").css("margin-left", "-50%")
+    $(".maincontent").css("margin-left", "0.5em")
+    $(".maincontent").css("margin-right", "0.5em")
+    $(".maincontent").css("width", "auto")
     previousMarginLeft = "-50%"
   } else {
-    if(isDropdownOpen == false) {
-      $(".sidebar").css("margin-left", "-11em")
-    }
+    $(".sidebar").css("margin-left", "-11em")
     previousMarginLeft = "-11em"
   }
 
