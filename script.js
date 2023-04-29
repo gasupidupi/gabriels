@@ -6,6 +6,17 @@ $(document).ready(function(){
   $(".link").find($(".linkline")).css('visibility', 'hidden')
   $(".linkline").css("width", 0)
   $(".linkline").find($("rect")).css("width", 0)
+  if($(window).width() <= 850) {
+    if(isDropdownOpen == false) {
+      $(".sidebar").css("margin-left", "-50%")
+    }
+    previousMarginLeft = "-50%"
+  } else {
+    if(isDropdownOpen == false) {
+      $(".sidebar").css("margin-left", "-11em")
+    }
+    previousMarginLeft = "-11em"
+  }
 
   $(window).on("resize", function() {
     if($(window).width() <= 850) {
