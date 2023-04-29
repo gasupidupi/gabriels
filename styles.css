@@ -27,6 +27,7 @@ ul {
 img {
   width: 100%;
   height: auto;
+  min-width: 5em;
 }
 .navbar {
   position: relative;
