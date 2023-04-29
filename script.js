@@ -9,6 +9,7 @@ $(document).ready(function() {
     $(".linkline").css("width", 0)
     $(".linkline").find($("rect")).css("width", 0)
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 850) {
+        $("#pdfbutton").hide()
         $(".sidebar").css("width", "50%")
         $(".sidebar").css("margin-left", "-50%")
         $(".maincontent").css("margin-left", "0.5em")
