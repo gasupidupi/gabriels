@@ -100,6 +100,17 @@ $(document).ready(function(){
         }, 500);
       }
     }
+    if($(this).text().includes("IPA")) {
+      if($(".navbar").css("position") == "sticky") {
+        $('html, maincontent').animate({
+          scrollTop: $("#IPA").offset().top - 130
+        }, 500);
+      } else {
+        $('html, maincontent').animate({
+          scrollTop: $("#IPA").offset().top
+        }, 500);
+      }
+    }
   });
 
   $(".link").hover(function(){
