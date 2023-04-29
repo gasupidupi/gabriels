@@ -57,19 +57,37 @@ $(document).ready(function(){
   $(".link").click(function(){
   }, function () {
     if($(this).text().includes("About")) {
-      $('html, body').animate({
+      if($(".navbar").css("position") == "sticky") {
+        $('html, maincontent').animate({
+          scrollTop: $("#About").offset().top - 130
+        }, 500);
+      } else {
+        $('html, maincontent').animate({
           scrollTop: $("#About").offset().top
-      }, 500);
+        }, 500);
+      }
     }
-    if($(this).text().includes("Project1")) {
-      $('mainwrapper, maincontent').animate({
-          scrollTop: $("#Project1").offset().top
-      }, 500);
+    if($(this).text().includes("Project")) {
+      if($(".navbar").css("position") == "sticky") {
+        $('html, maincontent').animate({
+          scrollTop: $("#Project").offset().top - 130
+        }, 500);
+      } else {
+        $('html, maincontent').animate({
+          scrollTop: $("#Project").offset().top
+        }, 500);
+      }
     }
     if($(this).text().includes("Links")) {
-      $('mainwrapper, maincontent').animate({
+      if($(".navbar").css("position") == "sticky") {
+        $('html, maincontent').animate({
+          scrollTop: $("#Links").offset().top - 130
+        }, 500);
+      } else {
+        $('html, maincontent').animate({
           scrollTop: $("#Links").offset().top
-      }, 500);
+        }, 500);
+      }
     }
   });
 
