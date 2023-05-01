@@ -47,6 +47,14 @@ button {
 	cursor: hand;
 }
 
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
 button:hover {
 	background-color: #ff715b;
 }

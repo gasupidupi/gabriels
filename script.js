@@ -41,6 +41,17 @@ $.getMarginLeft = function() {
   }
 };
 
+$.closeDropdown = function() {
+  isDropdownOpen = false;
+  $(".line").css("color", "#F9CB40")
+  $("#line1").css("transform", "revert")
+  $("#line1").css("top", "25%")
+  $("#line3").css("transform", "revert")
+  $("#line3").css("top", "65%")
+  $("#line2").show()
+  $(".sidebar").css("margin-left", $.getMarginLeft())
+};
+
 $(document).ready(function() {
 
     $.initialize()
@@ -57,7 +68,7 @@ $(document).ready(function() {
         }
     });
 
-    window.onscroll = function() {
+    $(window).on("scroll", function() {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
             $(".navbar").css("position", "sticky")
@@ -65,18 +76,11 @@ $(document).ready(function() {
         } else {
             $(".navbar").css("position", "relative")
             if (isDropdownOpen = true) {
-                isDropdownOpen = false;
-                $(".line").css("color", "#F9CB40")
-                $("#line1").css("transform", "revert")
-                $("#line1").css("top", "25%")
-                $("#line3").css("transform", "revert")
-                $("#line3").css("top", "65%")
-                $("#line2").show()
-                $(".sidebar").css("margin-left", $.getMarginLeft())
+                $.closeDropdown()
             }
         }
         prevScrollpos = currentScrollPos;
-    };
+    });
 
     $(".link").hover(function() {
         $(this).find($("a")).css("color", "#FF715B")
@@ -111,6 +115,11 @@ $(document).ready(function() {
               scrollTop: $("#IPA").offset().top - 130
           }, 500);
         }
+        else if ($(this).text().includes("Experience")) {
+          $('html, maincontent').animate({
+              scrollTop: $("#Experience").offset().top - 130
+          }, 500);
+        }
     });
 
     $(".link").hover(function() {
@@ -139,14 +148,7 @@ $(document).ready(function() {
             $("#line2").hide()
             $(".sidebar").css("margin-left", "0em")
         } else {
-            isDropdownOpen = false;
-            $(".line").css("color", "#F9CB40")
-            $("#line1").css("transform", "revert")
-            $("#line1").css("top", "25%")
-            $("#line3").css("transform", "revert")
-            $("#line3").css("top", "65%")
-            $("#line2").show()
-            $(".sidebar").css("margin-left", $.getMarginLeft())
+            $.closeDropdown()
         };
     });
 
