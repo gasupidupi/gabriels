@@ -71,48 +71,24 @@ $(document).ready(function() {
 
     $(".link").click(function() {}, function() {
         if ($(this).text().includes("About")) {
-            if ($(".navbar").css("position") == "sticky") {
-                $('html, maincontent').animate({
-                    scrollTop: $("#About").offset().top - 130
-                }, 500);
-            } else {
-                $('html, maincontent').animate({
-                    scrollTop: $("#About").offset().top
-                }, 500);
-            }
+          $('html, maincontent').animate({
+              scrollTop: $("#About").offset().top - 130
+          }, 500);
         }
-        if ($(this).text().includes("Project")) {
-            if ($(".navbar").css("position") == "sticky") {
-                $('html, maincontent').animate({
-                    scrollTop: $("#Project").offset().top - 130
-                }, 500);
-            } else {
-                $('html, maincontent').animate({
-                    scrollTop: $("#Project").offset().top
-                }, 500);
-            }
+        else if ($(this).text().includes("Project")) {
+          $('html, maincontent').animate({
+              scrollTop: $("#Project").offset().top - 130
+          }, 500);
         }
-        if ($(this).text().includes("Links")) {
-            if ($(".navbar").css("position") == "sticky") {
-                $('html, maincontent').animate({
-                    scrollTop: $("#Links").offset().top - 130
-                }, 500);
-            } else {
-                $('html, maincontent').animate({
-                    scrollTop: $("#Links").offset().top
-                }, 500);
-            }
+        else if ($(this).text().includes("Links")) {
+          $('html, maincontent').animate({
+              scrollTop: $("#Links").offset().top - 130
+          }, 500);
         }
-        if ($(this).text().includes("IPA")) {
-            if ($(".navbar").css("position") == "sticky") {
-                $('html, maincontent').animate({
-                    scrollTop: $("#IPA").offset().top - 130
-                }, 500);
-            } else {
-                $('html, maincontent').animate({
-                    scrollTop: $("#IPA").offset().top
-                }, 500);
-            }
+        else if ($(this).text().includes("IPA")) {
+          $('html, maincontent').animate({
+              scrollTop: $("#IPA").offset().top - 130
+          }, 500);
         }
     });
 
