@@ -24,6 +24,19 @@ $.getMarginLeft = function() {
   }
 };
 
+$.openPdf = function() {
+  isPdfOpen = true
+  $("#pdfobject").attr("data", "IPA.pdf")
+  $("#pdfobject").show()
+  $("#pdfbutton").html("Hide PDF")
+};
+
+$.closePdf = function() {
+  isPdfOpen = false
+  $("#pdfobject").hide()
+  $("#pdfbutton").html("Show PDF")
+};
+
 $.initialize = function() {
   $("#pdfobject").hide()
   $(".link").find($(".linkline")).css('visibility', 'hidden')
@@ -38,7 +51,7 @@ $.initialize = function() {
 };
 
 $.initializeMobile = function() {
-  $("#pdfobject").hide()
+  $.closePdf()
   $("#pdfbutton").hide()
   $(".sidebar").css("width", sidebarMobileWidth)
   $(".maincontent").css("margin-left", "0.5em")
@@ -167,14 +180,9 @@ $(document).ready(function() {
 
   }, function() {
     if (isPdfOpen) {
-      isPdfOpen = false
-      $("#pdfobject").hide()
-      $("#pdfbutton").html("Show PDF")
+      $.closePdf()
     } else {
-      isPdfOpen = true
-      $("#pdfobject").attr("data", "IPA.pdf")
-      $("#pdfobject").show()
-      $("#pdfbutton").html("Hide PDF")
+      $.openPdf()
     }
   });
 
