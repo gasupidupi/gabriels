@@ -86,7 +86,6 @@ button:hover {
 	z-index: 100;
 	box-shadow: 0.1em 0.1em 0.1em 0.1em #D3D3D380;
 	float: left;
-	/* added */
 	shape-outside: linear-gradient(transparent, transparent);
 }
 
