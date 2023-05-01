@@ -38,6 +38,7 @@ $.initialize = function() {
 };
 
 $.initializeMobile = function() {
+  $("#pdfobject").hide()
   $("#pdfbutton").hide()
   $(".sidebar").css("width", sidebarMobileWidth)
   $(".maincontent").css("margin-left", "0.5em")
