@@ -207,3 +207,10 @@ button:hover {
 		margin-left: -50%;
 	}
 }
+
+@media screen and (max-width: 331px) {
+	#bartitle {
+		display: none;
+		visibility: hidden;
+	}
+}
