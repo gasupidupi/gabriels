@@ -1,44 +1,65 @@
+var isDropdownOpen = false
+var isPdfOpen = false
+var previousMarginLeft = ""
+var prevScrollpos = 0
+var mobileMarginLeft = "-50%"
+var computerMarginLeft = "-11em"
+
+$.isMobile = function() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 850) {
+        return true
+    } else {
+        return false
+    }
+};
+
+$.initialize = function() {
+  $("#pdfobject").hide()
+  $(".link").find($(".linkline")).css('visibility', 'hidden')
+  $(".linkline").css("width", 0)
+  $(".linkline").find($("rect")).css("width", 0)
+  if ($.isMobile()) {
+      $("#pdfbutton").hide()
+      $(".sidebar").css("width", "50%")
+      $(".sidebar").css("margin-left", "-50%")
+      $(".maincontent").css("margin-left", "0.5em")
+      $(".maincontent").css("margin-right", "0.5em")
+      $(".maincontent").css("width", "auto")
+      $(".leftmarginwhendesktop").css("margin-left", "0")
+      previousMarginLeft = mobileMarginLeft
+  } else {
+      $(".sidebar").css("margin-left", "-11em")
+      previousMarginLeft = computerMarginLeft
+  }
+};
+
+$.getMarginLeft = function() {
+  if ($.isMobile()) {
+      return mobileMarginLeft
+  } else {
+      return computerMarginLeft
+  }
+};
+
 $(document).ready(function() {
 
-    var isDropdownOpen = false
-    var isPdfOpen = false
-    var previousMarginLeft = ""
-    var prevScrollpos = 0
-    $("#pdfobject").hide()
-    $(".link").find($(".linkline")).css('visibility', 'hidden')
-    $(".linkline").css("width", 0)
-    $(".linkline").find($("rect")).css("width", 0)
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() <= 850) {
-        $("#pdfbutton").hide()
-        $(".sidebar").css("width", "50%")
-        $(".sidebar").css("margin-left", "-50%")
-        $(".maincontent").css("margin-left", "0.5em")
-        $(".maincontent").css("margin-right", "0.5em")
-        $(".maincontent").css("width", "auto")
-        $(".leftmarginwhendesktop").css("margin-left", "0")
-        previousMarginLeft = "-50%"
-    } else {
-        $(".sidebar").css("margin-left", "-11em")
-        previousMarginLeft = "-11em"
-    }
+    $.initialize()
 
     $(window).on("resize", function() {
         if ($(window).width() <= 850) {
             if (isDropdownOpen == false) {
-                $(".sidebar").css("margin-left", "-50%")
+                $(".sidebar").css("margin-left", $.getMarginLeft())
             }
-            previousMarginLeft = "-50%"
         } else {
             if (isDropdownOpen == false) {
-                $(".sidebar").css("margin-left", "-11em")
+                $(".sidebar").css("margin-left", $.getMarginLeft())
             }
-            previousMarginLeft = "-11em"
         }
     });
 
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos & currentScrollPos > 0) {
+        if (prevScrollpos > currentScrollPos) {
             $(".navbar").css("position", "sticky")
             $(".navbar").css("top", "0")
         } else {
@@ -51,7 +72,7 @@ $(document).ready(function() {
                 $("#line3").css("transform", "revert")
                 $("#line3").css("top", "65%")
                 $("#line2").show()
-                $(".sidebar").css("margin-left", previousMarginLeft)
+                $(".sidebar").css("margin-left", $.getMarginLeft())
             }
         }
         prevScrollpos = currentScrollPos;
@@ -116,7 +137,6 @@ $(document).ready(function() {
             $("#line3").css("transform", "rotate(-135deg)")
             $("#line3").css("top", "45%")
             $("#line2").hide()
-            previousMarginLeft = $(".sidebar").css("margin-left")
             $(".sidebar").css("margin-left", "0em")
         } else {
             isDropdownOpen = false;
@@ -126,7 +146,7 @@ $(document).ready(function() {
             $("#line3").css("transform", "revert")
             $("#line3").css("top", "65%")
             $("#line2").show()
-            $(".sidebar").css("margin-left", previousMarginLeft)
+            $(".sidebar").css("margin-left", $.getMarginLeft())
         };
     });
 
