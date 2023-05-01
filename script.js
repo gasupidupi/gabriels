@@ -4,8 +4,8 @@ var previousMarginLeft = ""
 var prevScrollpos = 0
 var mobileMarginLeft = "-50%"
 var computerMarginLeft = "-11em"
-var mobileWidth = "50%"
-var computerWidth = "10em"
+var sidebarMobileWidth = "50%"
+var sidebarComputerWidth = "10em"
 var maincontentComputerWidth = "50em"
 
 $.isMobile = function() {
@@ -39,7 +39,7 @@ $.initialize = function() {
 
 $.initializeMobile = function() {
   $("#pdfbutton").hide()
-  $(".sidebar").css("width", mobileWidth)
+  $(".sidebar").css("width", sidebarMobileWidth)
   $(".maincontent").css("margin-left", "0.5em")
   $(".maincontent").css("margin-right", "0.5em")
   $(".maincontent").css("width", "auto")
@@ -49,7 +49,7 @@ $.initializeMobile = function() {
 
 $.initializeComputer = function() {
   $("#pdfbutton").show()
-  $(".sidebar").css("width", computerWidth)
+  $(".sidebar").css("width", sidebarComputerWidth)
   $(".maincontent").css("margin", "0 auto")
   $(".maincontent").css("width", maincontentComputerWidth)
   $(".leftmarginwhendesktop").css("margin-left", "0.5em")
