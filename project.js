@@ -74,7 +74,7 @@ $(document).ready(function() {
   $('#droppable').droppable({
     drop: function(event, ui) {
       // every position (pos) is a list where [0] is the x position and [1] is the y position
-      // every line is a list with two endpoint position
+      // every line is a list with two endpoint positions
       var thing_pos = [$('#thing').position().left + 3, $('#thing').position().top + 3] // thing center
       var mirror_line = [
         [$('#mirror').position().left, $('#mirror').position().top],
