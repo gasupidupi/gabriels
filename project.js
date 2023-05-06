@@ -113,7 +113,8 @@ $(document).ready(function() {
       if (
         $.isInBoundsOfInfiniteSlopeLine(mirror_line, phantom_mirror_line_a[1]) &&
         $.isInBoundsOfInfiniteSlopeLine(mirror_line, phantom_mirror_line_b[1]) &&
-        eye_line[0][0] < mirror_line[0][0]
+        eye_line[0][0] < mirror_line[0][0] &&
+        thing_pos < mirror_line[0][0]
       ) {
         $.showLine(thing_mirror_line, false);
         $.showLine(mirror_phantom_line, true);
