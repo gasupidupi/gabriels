@@ -119,7 +119,7 @@ $(document).ready(function() {
     $(this).find($(".linkline")).css("width", 0)
     $(this).find($(".linkline")).find($("rect")).css("width", 0)
     $(this).find($(".linkline")).css('visibility', 'hidden')
-    $(this).find($("a")).css("color", "#BCED09")
+    $(this).find($("a")).css("color", "#718e05")
   });
 
   $(".link").click(function() {}, function() {
@@ -155,7 +155,7 @@ $(document).ready(function() {
     $(this).find($(".linkline")).css("width", 0)
     $(this).find($(".linkline")).find($("rect")).css("width", 0)
     $(this).find($(".linkline")).css('visibility', 'hidden')
-    $(this).find($("a")).css("color", "#BCED09")
+    $(this).find($("a")).css("color", "#718e05")
   });
 
   $(".dropdown").click(function() {
