@@ -33,7 +33,6 @@ ul {
 img {
 	width: 100%;
 	height: auto;
-	margin-left: 1vw;
 }
 
 button {
@@ -180,6 +179,7 @@ button:hover {
 
 #gabriel {
 	min-width: 5em;
+	margin-left: 1vw;
 }
 
 #barcontent {
